@@ -44,7 +44,7 @@ complexityFom(bool includeMatPropInJac,
     // this is done e.g. on CPU since the forcing has a single entry
     // so we just update the corresponding entry of the state
     if (exploitForcingSparsity){
-      memMB[2] = 4.*sizeof(sc_t);
+      memMB[2] = 4.*sizeof(sc_t)/1024./1024.;
       flops[2] = 3.;
     }
     else{
@@ -111,7 +111,7 @@ complexityFom(bool includeMatPropInJac,
     const auto nnz_j_vp = fomObj.getJacobianNNZ(dofId::vp);
     comp_t::template spmm<ord_t>(nnz_j_vp, nVp, fSize, memMB[1], flops[1]);
 
-    memMB[2] = 4.*fSize*sizeof(sc_t);
+    memMB[2] = 4.*fSize*sizeof(sc_t)/1024./1024.;
     flops[2] = 3.*fSize;
 
     // spmm: xSp = xSp + dt * Jsp * xVp
