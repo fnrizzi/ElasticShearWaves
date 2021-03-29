@@ -49,3 +49,10 @@ Coming soon.
   - [rank-2 problem class](./cpp/src/kokkos/rom/rom_problem_rank_two_forcing.hpp)
   - [rank-1 solution loop](./cpp/src/kokkos/rom/run_rom_rank_one_forcing.hpp)
   - [rank-2 solution loop](./cpp/src/kokkos/rom/run_rom_rank_two_forcing.hpp)
+
+
+# License
+
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
+File is [here](./LICENSE).
