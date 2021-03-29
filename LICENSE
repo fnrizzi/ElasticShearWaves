@@ -1,10 +1,14 @@
 //@HEADER
 // ************************************************************************
 //
-//                        ElasticShearWaves
-// 				Copyright 2020, Francesco Rizzi
+//                              Pressio/SHAW
+// Copyright 2019 National Technology & Engineering Solutions of Sandia,LLC
+//                              (NTESS)
 //
-// ElasticShearWaves is licensed under BSD-3-Clause terms of use:
+// Under the terms of Contract DE-NA0003525 with NTESS, the 
+// U.S. Government retains certain rights in this software.
+//
+// Pressio is licensed under BSD-3-Clause terms of use:
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions 
@@ -34,7 +38,7 @@
 // IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 // POSSIBILITY OF SUCH DAMAGE.
 //
-// Questions? Contact Francesco Rizzi (fr.francescorizzi@gmail.com)
+// Questions? Contact Francesco Rizzi (fnrizzi@sandia.gov)
 //
 // ************************************************************************
 //@HEADER
