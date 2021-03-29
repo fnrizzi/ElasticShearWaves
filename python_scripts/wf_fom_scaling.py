@@ -252,8 +252,8 @@ if __name__== "__main__":
   baseDic = createBaseDic()
 
   #------------------------------
-  #doRunsRankOneForcing(args.dryRun, args.workDir, baseDic, args.exeDir, meshesDir, threads)
-  #doRunsRankTwoForcing(args.dryRun, args.workDir, baseDic, args.exeDir, meshesDir, threads, fSizes)
+  doRunsRankOneForcing(args.dryRun, args.workDir, baseDic, args.exeDir, meshesDir, threads)
+  doRunsRankTwoForcing(args.dryRun, args.workDir, baseDic, args.exeDir, meshesDir, threads, fSizes)
 
   #if not dr:
   extractData(args.workDir, meshList, threads, args.workDir+'/scaling.txt', [1]+fSizes)
