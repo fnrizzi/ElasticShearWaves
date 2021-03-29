@@ -14,9 +14,9 @@ To build the code, you can use one of the following two alternatives:
 - If you are an "expert" and want to use CMake directly, 
 you can refer to [this page](./docs/build_expert.md).
 
-- If you want a more guided procedure where we show you how 
-to get and install the TPLs, and provide you a "simpler" way 
-to build the code using helper bash scripts we provide, you can 
+- If you prefer a more guided procedure where we show you step-by-step 
+how to install the TPLs, and provide you a way to build the code 
+using helper bash scripts that we prepared, you can  
 follow this [step-by-step guide](./docs/build.md).
 
 # Step-by-step for running a full-order model simulation
