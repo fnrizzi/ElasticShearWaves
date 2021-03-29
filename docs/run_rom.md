@@ -17,6 +17,9 @@ Here we assume you already ran the [step-by-step guide](./docs/build.md)
 to build the code and used `MYWORKDIR` as the working directory for that procedure,
 so that `${MYWORKDIR}/build` contains all the executables.
 
+You also need Python>3.6 with the following packages: matplotlib, numpy, scipy, yaml.
+
+
 ## Generating the mesh
 See the same section in [this tutorial](./run_fom.md) for the FOM for more details on the grid.
 To generate the mesh files proceed as follows:

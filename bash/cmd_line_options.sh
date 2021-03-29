@@ -32,10 +32,6 @@ for option; do
 	    KOKKOSKERPFX=`expr "x$option" : "x-*kokkos-ker-pfx=\(.*\)"`
 	    ;;
 
-	-omp=* | --omp=* )
-	    WITHOPENMP=`expr "x$option" : "x-*omp=\(.*\)"`
-	    ;;
-
 	# unrecognized option}
 	-*)
 	    { echo "error: unrecognized option: $option
@@ -62,7 +58,7 @@ Options:
 
 --wipe-existing-data=[yes/no]	   if yes, all the following subfolders:
 				     --target-dir/data_*
-				     --target-dir/build_*
+				     --target-dir/build
 				   will be fully wiped.
 				   default = no
 
@@ -71,9 +67,6 @@ Options:
 
 --kokkos-ker-pfx=		   full path to Kokkos Kernels install dir with structure:
 				      <kokkos-ker-pfx>/install/{lib64, include}
-
---omp=[yes/no]			   if yes, enable OpenMP
-				   default = no
 
 EOF
   exit 0

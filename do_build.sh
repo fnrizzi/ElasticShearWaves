@@ -28,12 +28,11 @@ else
     echo "--with-env-script NOT set, so we assume env is set already"
 fi
 
-
-# check that blas and lapack are set
-if [[ -z ${BLAS_ROOT} ]]; then
-    echo "error: BLAS_ROOT must be found in the environment, exiting"
-    exit 2
-fi
+# # check that blas and lapack are set
+# if [[ -z ${BLAS_ROOT} ]]; then
+#     echo "error: BLAS_ROOT must be found in the environment, exiting"
+#     exit 2
+# fi
 
 # create working dir if not existing
 [[ ! -d ${WORKINGDIR} ]] && mkdir -p ${WORKINGDIR}
@@ -89,9 +88,6 @@ fi
 #----------------------
 EIGENPATH="${WORKINGDIR}/tpls/eigen/eigen"
 
-USEOMP=OFF
-[[ ${WITHOPENMP} == yes ]] && USEOMP=ON
-
 KOKKOSKERDIR=
 if [[ $ARCH == mac ]]; then
     KOKKOSKERDIR=${KOKKOSKERPFX}/lib/cmake/KokkosKernels
@@ -108,15 +104,10 @@ cd ${bdirname} && rm -rf *
 cmake -DCMAKE_CXX_COMPILER=${CXX} \
       -DCMAKE_VERBOSE_MAKEFILE:BOOL=TRUE \
       -DCMAKE_BUILD_TYPE=Release \
-      -DHAVE_OMP:BOOL=${USEOMP} \
       \
       -DEIGEN_INCLUDE_DIR=${EIGENPATH} \
-      \
       -DYAMLCPP_INCLUDE_DIR=${YAMLCPPPFX}/include \
       -DYAMLCPP_LIB_DIR=${YAMLCPPPFX}/lib \
-      \
-      -DBLAS_LIB_DIR=${BLAS_ROOT}/lib \
-      -DHAVE_KOKKOS:BOOL=ON \
       -DKokkosKernels_DIR=${KOKKOSKERDIR} \
       ${CPPSRC}
 make -j4

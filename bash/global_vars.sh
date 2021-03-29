@@ -30,9 +30,6 @@ else
     ARCH=linux
 fi
 
-# if we want OpenMP enabled
-WITHOPENMP=no
-
 function wipe_existing_data_in_target_dir(){
     echo "Wiping ${CPPWORKINGDIR}/{data_*, build}"
     rm -rf ${WORKINGDIR}/build ${WORKINGDIR}/data_*
@@ -47,7 +44,6 @@ function print_global_vars(){
     echo "KOKKOSPFX      = $KOKKOSPFX"
     echo "KOKKOSKERNPFX  = $KOKKOSKERPFX"
     echo "ARCH           = $ARCH"
-    echo "OMP            = $WITHOPENMP"
 }
 
 function check_minimum_vars_set(){

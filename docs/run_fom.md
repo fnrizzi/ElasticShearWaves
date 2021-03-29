@@ -14,6 +14,8 @@ Here we assume you already ran the [step-by-step guide](./docs/build.md)
 to build the code and used `MYWORKDIR` as the working directory for that procedure,
 so that `${MYWORKDIR}/build` contains all the executables.
 
+You also need Python>3.6 with the following packages: matplotlib, numpy, scipy, yaml.
+
 
 ## Generating the mesh
 The code has been developed such that the mesh is generated with Python

@@ -3,6 +3,17 @@
 Here is a step-by-step guide on how to build/install
 the TPLs needed and the actual code.
 
+## Prerequisites
+Requires: 
+
+- CMake>=3.11.0
+
+- C, C++ compiler with C++14 support, Fortran compiler
+
+The code has been tested on MaxOS Catalina 10.15.5 
+and RedHat 7.0 with GCC-8.3.1, GCC-8.4.0.
+
+
 ## Step 1: set basic environment
 To simplify the process, define the following env variables:
 ```bash
@@ -16,8 +27,6 @@ and execute:
 ```bash
 mkdir -p ${MYWORKDIR}
 ```
-The following has been tested with CMake>=3.11.0, and
-GCC-8.3.1 and GCC-8.4.0.
 
 ## Step 2: BLAS/LAPACK
 Here we build and install BLAS and LAPACK.
@@ -76,7 +85,7 @@ above and directly set the needed env vars to point to your installation.
 Proceed as follows:
 ```bash
 cd ${ESWSRCDIR}
-./do_build.sh --working-dir=${MYWORKDIR} --kokkos-pfx=${KOKKOSPFX} --kokkos-ker-pfx=${KOKKOSKERPFX} --omp=yes
+./do_build.sh --working-dir=${MYWORKDIR} --kokkos-pfx=${KOKKOSPFX} --kokkos-ker-pfx=${KOKKOSKERPFX}
 ```
 this should generate inside `${MYWORKDIR}/build` the following:
 ```bash
