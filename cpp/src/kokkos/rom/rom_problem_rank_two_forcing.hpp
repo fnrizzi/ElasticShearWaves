@@ -176,45 +176,8 @@ private:
       std::cout << "\nfinalProcessTime = "
 		<< std::fixed << std::setprecision(10) << elapsed.count();
       std::cout << "\n";
-
-      // if(parser_.enableWriteFinalState()){
-      // 	processIndividualFinalStates(xVp_d_, dofId::vp);
-      // 	processIndividualFinalStates(xSp_d_, dofId::sp);
-      // }
     }
   }
-
-  // template <typename T = state_d_t>
-  // typename std::enable_if< is_accessible_on_host<T>::value >::type
-  // processIndividualFinalStates(const T & romRankTwoState, const dofId dof)
-  // {
-  //   // caveats, the stuff below might need some changes for real cuda
-
-  //   const auto dofName = dofIdToString(dof);
-  //   const auto phi_d   = (dof==dofId::vp) ? phiVp_d_ : phiSp_d_;
-  //   const char ct_N    = 'N';
-
-  //   using fom_state_t = Kokkos::View<sc_t*, kll, exe_space>;
-  //   constexpr auto one	= constants<sc_t>::one();
-  //   constexpr auto zero	= constants<sc_t>::zero();
-
-  //   fom_state_t fomState("fomState", phi_d.extent(0));
-  //   for (auto j=0; j<romRankTwoState.extent(1); ++j)
-  //   {
-  //     // extract the j-th rom state
-  //     auto romStateJ = Kokkos::subview(romRankTwoState, Kokkos::ALL(), j);
-  //     const auto f2  = "finalRomState_"+dofName+"_"+std::to_string(j);
-  //     writeToFile(f2, romStateJ, false);
-
-  //     // map to fom state
-  //     KokkosBlas::fill(fomState, zero);
-  //     KokkosBlas::gemv(&ct_N, one, phi_d, romStateJ, zero, fomState);
-
-  //     const auto f1 = "finalFomState_"+dofName+"_"+std::to_string(j);
-  //     writeToFile(f1, fomState, parser_.writeFinalStateBinary());
-  //   }
-  // }
-
 };
 
 }//end namespace

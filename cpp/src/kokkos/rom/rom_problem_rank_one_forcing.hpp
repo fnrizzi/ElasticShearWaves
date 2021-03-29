@@ -238,41 +238,8 @@ private:
       std::cout << "\nfinalProcessTime = " << std::fixed << std::setprecision(10)
 		<< elapsed.count();
       std::cout << "\n";
-
-      // if(parser_.enableWriteFinalState()){
-      // 	processFinalStateToFile(dofId::vp, iSample);
-      // 	processFinalStateToFile(dofId::sp, iSample);
-      // }
     }
   }
-
-  // void processFinalStateToFile(const dofId dof, std::size_t iSample = 0)
-  // {
-  //   constexpr auto one	= constants<sc_t>::one();
-  //   constexpr auto zero	= constants<sc_t>::zero();
-
-  //   const auto dofName	  = dofIdToString(dof);
-  //   const auto romState_d = (dof==dofId::vp) ? xVp_d_ : xSp_d_;
-  //   const auto phi_d	  = (dof==dofId::vp) ? phiVp_d_ : phiSp_d_;
-
-  //   const auto fomStateSize     = (dof==dofId::vp) ? nVpFom_ : nSpFom_;
-  //   const auto fomStateFileName = "finalFomState_"+dofName+"_"+std::to_string(iSample);
-  //   const auto romStateFileName = "finalRomState_"+dofName+"_"+std::to_string(iSample);
-
-  //   state_d_t fomState_d("fomState_d", fomStateSize);
-  //   const char ct_N	= 'N';
-  //   KokkosBlas::gemv(&ct_N, one, phi_d, romState_d, zero, fomState_d);
-
-  //   auto fomState_h = Kokkos::create_mirror_view(fomState_d);
-  //   auto romState_h = Kokkos::create_mirror_view(romState_d);
-  //   Kokkos::deep_copy(fomState_h, fomState_d);
-  //   Kokkos::deep_copy(romState_h, romState_d);
-
-  //   writeToFile(fomStateFileName, fomState_h, parser_.writeFinalStateBinary());
-  //   // the rom state is small, so use ascii
-  //   writeToFile(romStateFileName, romState_h, false);
-  // }
-
 };
 
 }//end namespace

@@ -112,38 +112,3 @@ updateVelocity(const bool includeMatPropInJac,
 }//end namespace kokkosapp
 #endif
 
-
-
-
-
-
-
-
-
-
-// template <typename sc_t, typename state_d_t>
-// struct Foo2
-// {
-//   std::size_t vpGid_;
-//   sc_t T_;
-//   sc_t dt_;
-//   state_d_t xVp_d_;
-//   state_d_t rhoInvVp_d_;
-
-//   Foo2(sc_t T, sc_t dt, state_d_t xVp_d, state_d_t rhoInvVp, std::size_t vpGid)
-//     : T_(T), dt_(dt), xVp_d_(xVp_d), rhoInvVp_d_(rhoInvVp), vpGid_(vpGid)
-//   {}
-
-//   KOKKOS_INLINE_FUNCTION
-//   void operator() (const std::size_t & i) const
-//   {
-//     const sc_t freq = 1./50.;
-//     const sc_t delayTime = 120.;
-
-//     const auto tDiff   = (T_-delayTime);
-//     const auto tDiffSq = tDiff*tDiff;
-//     const auto expTerm = std::exp( -freq*tDiffSq );
-//     const auto result = (i == vpGid_) ? -2.*tDiff*freq*expTerm : 0.0;
-//     xVp_d_(i) += dt_*rhoInvVp_d_(i) * result;
-//   }
-// };

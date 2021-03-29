@@ -34,37 +34,6 @@ void complexityRankTwoForcing(const int_t nVp,
   flopsCost = std::accumulate(flops.begin(), flops.end(), 0.);
 }
 
-
-// template <typename sc_t, typename state_d_t>
-// struct Foo
-// {
-//   sc_t T_;
-//   sc_t dt_;
-//   state_d_t xRomVp_d_;
-//   state_d_t phiVpRhoInv_;
-
-//   Foo(sc_t T, sc_t dt, state_d_t xRomVp_d, state_d_t phiVpRhoInv)
-//     : T_(T), dt_(dt), xRomVp_d_(xRomVp_d), phiVpRhoInv_(phiVpRhoInv)
-//   {}
-
-//   KOKKOS_INLINE_FUNCTION
-//   void operator() (const std::size_t & j) const
-//   {
-//     const sc_t freq = 1./50.;
-//     const sc_t delayTime = 120.;
-
-//     const auto tDiff   = (T_-delayTime);
-//     const auto tDiffSq = tDiff*tDiff;
-//     const auto expTerm = std::exp( -freq*tDiffSq );
-//     const auto result = -2.*tDiff*freq*expTerm;
-
-//     for (std::size_t i=0; i<xRomVp_d_.extent(0); ++i){
-//       xRomVp_d_(i, j) += phiVpRhoInv_(i,j) * result;
-//     }
-//   }
-// };
-
-
 template <
   typename step_t, typename sc_t, typename forcing_t,
   typename observer_t, typename rom_jac_d_t, typename state_d_t
@@ -111,8 +80,6 @@ void runRomRankTwoForcing(const step_t & numSteps,
     // xRomVp = xRomVp + dt * ( romJvp * xRomSp )
     KokkosBlas::gemm(&ct_N, &ct_N, dt, romJvp_d, xRomSp_d, one, xRomVp_d);
     // xRomVp = xRomVp + phiVpTRhoInv * dt * f // Note: here f contains dt already
-    // Foo<sc_t, state_d_t> fnc(timeVp, dt, xRomVp_d, phiVpRhoInv);
-    // Kokkos::parallel_for(xRomVp_d.extent(1), fnc);
     KokkosBlas::axpby(f, phiVpRhoInv, kvOnes, xRomVp_d);
     const double ct1 = timer.seconds();
     timer.reset();

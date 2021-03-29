@@ -226,25 +226,11 @@ it makes sense to compute them once." << std::endl;
       seismoObj.writeReceiversToFile();
     }
 
-    // if(parser_.enableWriteFinalState()){
-    //   processFinalStateToFile(dofId::vp, iSample);
-    //   processFinalStateToFile(dofId::sp, iSample);
-    // }
-
     const auto finishTime = std::chrono::high_resolution_clock::now();
     const std::chrono::duration<double> elapsed = finishTime - startTime;
     std::cout << "\nfinalProcessTime = " << std::fixed << std::setprecision(10) << elapsed.count();
     std::cout << "\n";
   }
-
-  // void processFinalStateToFile(const dofId dof, std::size_t iSample = 0)
-  // {
-  //   const auto dofName		= dofIdToString(dof);
-  //   const auto fomState_d	= (dof==dofId::vp) ? xVp_d_ : xSp_d_;
-  //   const auto fomStateFileName = "finalFomState_"+dofName+"_"+std::to_string(iSample);
-  //   auto fomState_h = Kokkos::create_mirror_view(fomState_d);
-  //   writeToFile(fomStateFileName, fomState_h, parser_.writeFinalStateBinary());
-  // }
 
 };
 
