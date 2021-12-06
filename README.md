@@ -6,7 +6,22 @@ The implementation uses Kokkos and Kokkos-kernels to enable performance portabil
 and provides capabilities to run both the full order model (FOM)
 as well as the Galerkin reduced order model (ROM).
 
-Specifically, this code has been developed mainly for [this paper](https://arxiv.org/abs/2009.11742)).
+Specifically, this code has been developed mainly for [this paper](https://arxiv.org/abs/2009.11742).
+
+<br/>
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                             IMPORTANT
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+This repo is not being updated anymore. The code is being moved to https://github.com/Pressio/SHAW.
+For all the latest developments, refer to that repo. 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+<br/>
+
 
 # Building
 To build the code, you can use one of the following two alternatives: 
